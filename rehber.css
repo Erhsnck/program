@@ -1,27 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 :root {
-  --bg: #0b0c15;
-  --surface: #121228;
-  --surface-2: #18193a;
-  --text: #e8e8f0;
-  --text-dim: #9a9aad;
+  --bg: #ffffff;
+  --surface: #f8f9fb;
+  --surface-2: #eef1f6;
+  --text: #1a1b23;
+  --text-dim: #6b7280;
   --red: #ff4d6d;
-  --red-soft: rgba(255, 77, 109, 0.12);
-  --red-border: rgba(255, 77, 109, 0.35);
+  --red-soft: rgba(255, 77, 109, 0.10);
+  --red-border: rgba(255, 77, 109, 0.30);
   --green: #3ecf8e;
   --blue: #4da8ff;
-  --purple: #b388ff;
-  --border: rgba(255,255,255,0.06);
+  --purple: #7c5cff;
+  --border: rgba(0,0,0,0.08);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: radial-gradient(1200px 800px at 10% -10%, #1a0b2e 0%, transparent 60%),
-                  radial-gradient(1000px 700px at 110% 10%, #0b1a3e 0%, transparent 60%),
-                  var(--bg);
+  background: var(--bg);
   color: var(--text);
   min-height: 100vh;
   padding: 40px 20px;
@@ -30,7 +28,8 @@ body {
 .container { max-width: 1100px; margin: 0 auto; }
 
 header {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px;
+  text-align: center;
   margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--border);
 }
 
