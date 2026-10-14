@@ -1,0 +1,22 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "dersler": {
+      "$gun/$idx": {
+        ".read": "auth != null",
+        ".write": "auth != null && data.exists() ? auth.uid == data.child('uid').val() : true"
+      }
+    },
+    "meşgul": {
+      "$gun/$idx": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "ogrenciAdlari": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}
