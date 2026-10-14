@@ -152,7 +152,7 @@ function renderGrid() {
       slot.innerHTML = `
         <div>
           <div class="time">${blok.ders}</div>
-          <div class="label">${blok.teneffüs}</div>
+         
           <div class="empty-hint" id="hint-${gün}-${i}">Atama yapmak için tıklayın</div>
         </div>
       `;
