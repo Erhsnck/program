@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rehber Öğretmen - Ders Yerleştirme</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <!-- 1. Firebase Config Gizleme: config.js dosyası yüklenir; .gitignore'a eklenmeli veya sunucu proxy kullanılmalı -->
+  <script src="config.js"></script>
+  <link rel="stylesheet" href="rehber.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Rehber Öğretmen - Ders Yerleştirme</h1>
+        <p style="margin-top:4px;color:var(--text-dim);font-size:14px;">Boş saatlere tıklayın, öğrenci ismi girin. Kırmızı saatlere atama yapılamaz.</p>
+      </div>
+      <span class="badge">Pzt · Çar · Per</span>
+    </header>
+
+    <div class="day-grid" id="grid"></div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="swatch red"></span> Meşgul (Kırmızı) — Atama Yapılamaz</div>
+      <div class="legend-item"><span class="swatch purple"></span> Atanmış Öğrenci</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal" onclick="if(event.target===this) closeModal()">
+    <div class="modal-box">
+      <h2>Öğrenci Ata</h2>
+      <div class="sub" id="modal-sub">Pazartesi — 11:00 - 11:40</div>
+      <div class="input-wrap">
+        <input type="text" id="studentInput" placeholder="Öğrenci adı yazın..." autocomplete="off" oninput="filterSuggestions(this.value)">
+        <input type="text" id="classInput" placeholder="Sınıf bilgisi (ör. 8, 9)..." autocomplete="off" style="margin-top:8px;">
+        <ul class="suggestions" id="suggestions"></ul>
+      </div>
+      <div class="btn-group">
+        <button class="btn-secondary" id="btn-secondary" onclick="closeModal()">İptal</button>
+        <button class="btn-primary" id="btn-primary" onclick="saveStudent()">Kaydet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Kod Modülerleştirme: Tüm JS rehber.js'te -->
+  <script src="rehber.js"></script>
+</body>
+</html>
