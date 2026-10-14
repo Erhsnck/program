@@ -26,11 +26,14 @@ const db = firebase.database ? firebase.database() : null;
 
 const günler = ["Pazartesi", "Çarşamba", "Perşembe"];
 const saatler = [
-  { ders: "11:00 - 11:40", teneffüs: "11:40 - 11:50" },
-  { ders: "11:50 - 12:30", teneffüs: "12:30 - 12:40" },
-  { ders: "12:40 - 13:20", teneffüs: "13:20 - 13:30" },
-  { ders: "13:30 - 14:10", teneffüs: "14:10 - 14:20" },
-  { ders: "14:20 - 15:00", teneffüs: "15:00 - 15:10" },
+  { ders: "12:00 - 12:40" },
+  { ders: "12:50 - 13:30" },
+  { ders: "13:40 - 14:20" },
+  { ders: "14:30 - 15:10" },
+  { ders: "15:20 - 16:00" },
+  { ders: "16:10 - 16:50" },
+  { ders: "17:00 - 17:40" },
+  { ders: "17:50 - 18:30" },
 ];
 
 let selected = { gün: '', idx: 0, el: null };
